@@ -18,9 +18,10 @@ class Wallet
   def inititalize
     @wallet = wallet
     @bet = bet
-  end
-  def get_wallet
     @bankroll = []
+  end
+  
+  def get_wallet
     @wallet = gets.to_f
     @bankroll << @wallet
   end
@@ -33,9 +34,17 @@ class Wallet
       puts "Insuffient Funds"
       # go to menu      
     end
+
+    def get_money
+      puts "Enter amount"
+      amount = gets.to_f
+      @bankroll.push(amount)
+    end
+
   end
 end
   
+class Casino
   def app
     puts "Welcome to the Honeybadger Casino!"
     puts "Enter your name"
@@ -47,5 +56,7 @@ end
     puts "Your starting balance is #{sprintf("%.2f",new_wallet.wallet)}"
     # menu
   end
+end
 
-app()
+game = Casino.new
+game.app
