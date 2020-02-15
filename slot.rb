@@ -1,3 +1,4 @@
+class slot
 def slot_multiplier(s1, s2, s3)
   if s1==s2 && s2==s3
     3

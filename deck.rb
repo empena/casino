@@ -1,6 +1,7 @@
+require_relative 'card'
 class Deck
   # Getter and Setter methods for rank, suit and color
-  attr_accessor :cards
+  attr_accessor :cards, :ranks
  
   # Gets called when you call the new method to create an instance
   # deck = Deck.new
@@ -29,5 +30,11 @@ class Deck
      @cards.shuffle.each do |card|
        puts "#{card.rank} #{card.suit} (#{card.color})"
      end
-   end
- end
+    end
+     def display_rank
+      @cards.shuffle.each do |card|
+        puts card
+     end
+ 
+    end
+  end
