@@ -2,15 +2,17 @@ require_relative 'deck'
 require_relative 'dice'
 require_relative 'card'
 require_relative 'account'
+require_relative 'slot'
 
 
   
 class Casino
   def app
+    @new_player = Account.new
+    
     puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     puts "Welcome to the Honeybadger Casino!"
     puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-    @new_player = Account.new
     @new_player.get_name
     puts "Hello #{@new_player.name}, enter how much money you're ready to lose."
     @new_player.get_cash
@@ -27,7 +29,10 @@ class Casino
     user_selection = gets.to_i
     case user_selection
     when 1
-      #play slots
+      slots = Slots.new
+      x = slots.run_slots
+      puts x
+      menu()
     when 2
       #play high/low 
     when 3
@@ -48,7 +53,7 @@ class Casino
       when 3
         menu()
       end
-      
+
     when 4
       return
     end
