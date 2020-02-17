@@ -30,7 +30,12 @@ class Account
     return @sum
   end
 
+  def update_bankroll(dollar_amt)
+    @bankroll.push(dollar_amt)
+  end
+
 end
+
 
 
 

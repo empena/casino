@@ -1,8 +1,9 @@
 
 class Slots
-  
-  def initialize
+  attr_accessor :balance
+  def initialize(balance)
   @cashflow = []
+  @balance = balance
   end
 
   def slot_multiplier(s1, s2, s3)
@@ -21,6 +22,7 @@ class Slots
     puts "----------------------"
     puts "Welcome to Ruby Slots"
     puts "----------------------"
+    puts "\nYour current account balance is: $#{sprintf("%.2f",@balance)}"
     loop do
       puts "How much would you like to bet?"
       bet = gets.to_f

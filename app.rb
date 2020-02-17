@@ -3,16 +3,19 @@ require_relative 'dice'
 require_relative 'card'
 require_relative 'account'
 require_relative 'slot'
-require_relative 'hlgame'
+# require_relative 'hlgame'
 
 
   
 class Casino
+  
+  
   def app
     @new_player = Account.new
     
+    
     puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-    puts "Welcome to the Honeybadger Casino!"
+    puts "WELCOME TO THE RUBY RED CASINO!"
     puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     @new_player.get_name
     puts "Hello #{@new_player.name}, enter how much money you're ready to lose."
@@ -30,15 +33,16 @@ class Casino
     user_selection = gets.to_i
     case user_selection
     when 1
-      slots = Slots.new
+      balance = @new_player.sum_bankroll
+      slots = Slots.new(balance)
       x = slots.run_slots
-      puts x
+      @new_player.update_bankroll(x)
       menu()
     when 2
-      high_low=Hlgame.new
-      x = high_low.hlgame
-      puts x
-      menu()
+      # high_low=Hlgame.new
+      # x = high_low.hlgame
+      # puts x
+      # menu()
     when 3
       balance = @new_player.sum_bankroll
       puts "Your current balance is $#{sprintf("%.2f",balance)}."
