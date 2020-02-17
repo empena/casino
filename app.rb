@@ -1,17 +1,12 @@
 require_relative 'deck'
 require_relative 'dice'
 require_relative 'card'
-<<<<<<< HEAD
 require_relative 'account'
-=======
 require_relative 'hlgame'
->>>>>>> “Hilowgame_draft”
 
 
-<<<<<<< HEAD
   
 class Casino
-=======
   def bet
     @bet = gets.to_f
     if @bet # < @Bankroll
@@ -29,11 +24,9 @@ class App
     @new_wallet = Wallet.new
   app
   end
->>>>>>> “Hilowgame_draft”
   def app
     puts "**********************************"
     puts "Welcome to the Honeybadger Casino!"
-<<<<<<< HEAD
     puts "**********************************"
     new_player = Account.new
     new_player.get_name
@@ -46,7 +39,6 @@ end
 
 game = Casino.new
 game.app()
-=======
     puts "Enter your name"
   
     @new_player.get_name
@@ -54,7 +46,7 @@ game.app()
     
     @new_wallet.get_wallet
     puts "Your starting balance is #{sprintf("%.2f",@new_wallet.wallet)}"
-  end
+  
     def menu
       puts 'test'
     end
@@ -62,8 +54,7 @@ game.app()
    
     
   
-end
 
 
 
->>>>>>> “Hilowgame_draft”
+

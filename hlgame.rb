@@ -2,7 +2,7 @@ require_relative 'app'
 class Hlgame
 
   def initialize
-    
+    hi_low_game
   end
 
 def Add_money
@@ -92,5 +92,6 @@ end
   
     end
 
-     Hlgame.new.hi_low_game
+     Hlgame.new
+
 
