@@ -1,3 +1,7 @@
+### GEMS ###
+require 'colorize'
+
+### RELATIVE PATHS ###
 require_relative 'deck'
 require_relative 'dice'
 require_relative 'card'
@@ -14,9 +18,9 @@ class Casino
     @new_player = Account.new
     
     
-    puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-    puts "WELCOME TO THE RUBY RED CASINO!"
-    puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~".colorize(:yellow)
+    puts "WELCOME TO THE RUBY RED CASINO!".colorize(:red)
+    puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~".colorize(:yellow)
     @new_player.get_name
     puts "Hello #{@new_player.name}, enter how much money you're ready to lose."
     @new_player.get_cash
@@ -25,7 +29,7 @@ class Casino
   end
   
    def menu
-    puts "~~~~~ CASINO  ~~~~~"
+    puts "~~~~~ CASINO  ~~~~~".colorize(:red)
     puts "1) Play Slots"
     puts "2) Play High / Low"
     puts "3) View Account"
@@ -57,7 +61,43 @@ class Casino
         puts "Your new account balance is $#{new_balance}."
         menu()
       when 2
-        # Fun cash out program - Sounds? Crazy text? 
+        puts "
+              $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+              $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+              $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+              $$$$$$$$$$$$$$$$$$,,,$$$$$$$$$$$$$$$$$
+              $$$$$$$$$$$$$$$$$$OOO$$$$$$$$$$$$$$$$$
+              $$$$$$$$$$$$$$$$$!OOO!$$$$$$$$$$$$$$$$
+              $$$$$$$$$$$$$$$$,$OOO$,$$$$$$$$$$$$$$$
+              $$$$$$$$$$$$$$,$OOOOOOO$,$$$$$$$$$$$$$
+              $$$$$$$$$$$$!$OOOOOOOOOOO$!$$$$$$$$$$$
+              $$$$$$$$$$,$OOOOOOOOOOOOOOO$,$$$$$$$$$
+              $$$$$$$$,1OOOOOOOOOOOOOOOOOOO7,$$$$$$$
+              $$$$$$,!OOOOOOOOOOOOOOOOOOOOOO$$$$$$$$
+              $$$$$$,!OOOOOOOO $$$$! OOOOOOOO1$$$$$$
+              $$$$$$$,OOOOOOOO $$$$! OOOOOOOO$$$$$$$
+              $$$$$$$,OOOOOOOOOO!$$$|,OOOOOOO!$$$$$$
+              $$$$$$$$,OOOOOOOOOOO,$$$--------$$$$$$
+              $$$$$$$$,!OOOOOOOOOOOO,$$$$$$$$$$$$$$$
+              $$$$$$$$$$,,OOOOOOOOOOO,,$$$$$$$$$$$$$
+              $$$$$$$$$$$$,OOOOOOOOOOOO,,$$$$$$$$$$$
+              $$$$$$$$$$$$$,!OOOOOOOOOOOO,+$$$$$$$$$
+              $$$$$$$$$$$$$$$,==OOOOOOOOOOO,$$$$$$$$
+              $$$$$$---------$$$,,OOOOOOOOOO,,$$$$$$
+              $$$$$$,,OOOOOO,,$$$$,,OOOOOOOOO!$$$$$$
+              $$$$$$1OOOOOOOO.,~~~,OOOOOOOOOO!$$$$$$
+              $$$$$$!OOOOOOOOOOOOOOOOOOOOOOO1$$$$$$$
+              $$$$$$$,OOOOOOOOOOOOOOOOOOOOO,$$$$$$$$
+              $$$$$$$$,OOOOOOOOOOOOOOOOOOO!$$$$$$$$$
+              $$$$$$$$$1OOOOOOOOOOOOOOOO,1$$$$$$$$$$
+              $$$$$$$$$$,~~,OOOOOOOOOO,,$$$$$$$$$$$$
+              $$$$$$$$$$$$$$,,1OOO1,,$$$$$$$$$$$$$$$
+              $$$$$$$$$$$$$$$$$!OOO!$$$$$$$$$$$$$$$$
+              $$$$$$$$$$$$$$$$$,OOO,$$$$$$$$$$$$$$$$
+              $$$$$$$$$$$$$$$$$$,,,$$$$$$$$$$$$$$$$$
+              $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+              $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+              $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
       when 3
         menu()
       end
@@ -70,4 +110,4 @@ class Casino
 end
 
 game = Casino.new
-game.app()
+game.app()  
