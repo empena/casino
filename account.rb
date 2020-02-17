@@ -29,21 +29,9 @@ class Account
     @sum = @bankroll.inject(0) {|result, element|result + element}
     return @sum
   end
-    
-  def place_bet
-    # Prompts user for a bet amount, compares bet amount to current account balance (@bankroll).
-    @bet = gets.to_f
-    if @bet <= @sum
-      # go
-    else 
-      puts "Insuffient Funds"
-      # go to menu      
-    end
-
-  end
-
 
 end
+
 
 
 

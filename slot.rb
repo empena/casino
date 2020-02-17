@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-class slot
-def slot_multiplier(s1, s2, s3)
-  if s1==s2 && s2==s3
-    3
-  elsif s1==s2 || s2==s3 || s1==s3
-    2
-  else
-    0
-  end
-end
-=======
->>>>>>> d6e28ddc0714c4de264d45d82af4626d97aa0ff0
 
 class Slots
   
