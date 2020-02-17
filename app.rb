@@ -3,6 +3,7 @@ require_relative 'dice'
 require_relative 'card'
 require_relative 'account'
 require_relative 'slot'
+require_relative 'hlgame'
 
 
   
@@ -34,7 +35,10 @@ class Casino
       puts x
       menu()
     when 2
-      #play high/low 
+      high_low=Hlgame.new
+      x = high_low.hlgame
+      puts x
+      menu()
     when 3
       balance = @new_player.sum_bankroll
       puts "Your current balance is $#{sprintf("%.2f",balance)}."

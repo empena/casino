@@ -2,22 +2,28 @@ require_relative 'app'
 class Hlgame
 
   def initialize
-    
+    place_bet
   end
 
-def Add_money
-  puts"you can add money here"
-hi_low_game
-end
+  def place_bet
+    @bet = gets.to_f
+    if @bet <= @sum
+      hi_low_game
+      else 
+      puts "Insuffient Funds"
+      gomenu = Casino.new
+      x = gomenu.menu
+      puts x
+      place_bet()
+          
+    end
 
- def hi_low_game
+  def hi_low_game
 
+      puts "Welcome to a game of high-low."
 
-  
-  puts "Welcome to a game of high-low."
-
-playagain = "y"  
-while playagain == "y" #wallet money > bet
+    playagain = "y"  
+    while playagain == "y" 
 
     win = false
 
@@ -28,69 +34,60 @@ while playagain == "y" #wallet money > bet
     while !win
         guessedNumber = gets.to_i
 
-        # Wants to quit
+       
         if guessedNumber == -1 then
-            
+            puts x
         end
 		
-        # Lets compare our number to computer number
+        
         if guessedNumber > randNum then
-          # - bet to bet from wallet
+          
             puts "Too low you lose."
+            @bet - @bankroll
+            puts @sum
             puts "want to play again?(y/n)"
             playagain = gets.chomp!
         if playagain == "y"
-          hi_low_game
+            place_bet
         else playagain ="n"
-          puts "lol"
-          exit
+          puts "see you next time"
+          puts x
         end
 
         elsif guessedNumber < randNum then
-          # - bet from wallet
             puts "Too low you lose."
+            @bet - @bankroll
+            puts @sum
+
             puts "want to play again?(y/n)"
             playagain = gets.chomp!
             if playagain == "y"
-              hi_low_game
+              place_bet
             else playagin ="n"
-              puts "lol"
-              exit
-            end
+              puts "see you next time"
+              puts x
+          end
            
         else
             puts "You win!"
-            #add bet to wallet
+            @bet - @bankroll
             puts "Want to play again? (y/n)"
             playagain = gets.chomp!
             if playagain =="y"
-              hi_low_game
+              playagain
 
-            #add bet to wallet
+            
             win = true
         end
     end
 	
-    # If we reached here, the game has ended, ask the user if they want to play again.
     puts "Want to play again? (y/n)"
     playagain = gets.chomp!
 
 end
 
-puts "Thanks for playing!"
   end
 end
-
-
- 
-  
- 
-
-  def game_rule
-    puts 'kjkjkjkjkli'
-     end   
-  
-    end
-
-     Hlgame.new.hi_low_game
-
+end
+end
+Hlgame.new
