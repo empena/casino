@@ -29,7 +29,7 @@ class Casino
   end
   
    def menu
-    puts "~~~~~ CASINO  ~~~~~".colorize(:red)
+    puts "~~~~~ CASINO  ~~~~~"
     puts "1) Play Slots"
     puts "2) Play High / Low"
     puts "3) Play Roulette"
