@@ -8,7 +8,7 @@ require_relative 'card'
 require_relative 'account'
 require_relative 'slot'
 require_relative 'roulette'
-# require_relative 'hlgame'
+require_relative 'hlgame'
 
 
   
@@ -46,11 +46,10 @@ class Casino
       @new_player.update_bankroll(x)
       menu()
     when 2
-      
-      # high_low=Hlgame.new
-      # x = high_low.hlgame
-      # puts x
-      # menu()
+      balance = @new_player.sum_bankroll
+      high_low = Hlgame.new(balance)
+      x = high_low.place_bet()
+      menu()
     when 3
       balance = @new_player.sum_bankroll
       roulette = Roulette.new(balance)
