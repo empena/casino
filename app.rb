@@ -1,5 +1,4 @@
-### GEMS ###
-require 'colorize'
+
 
 ### RELATIVE PATHS ###
 require_relative 'deck'
@@ -19,9 +18,9 @@ class Casino
     @new_player = Account.new
     
     
-    puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~".colorize(:yellow)
-    puts "WELCOME TO THE RUBY RED CASINO!".colorize(:red)
-    puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~".colorize(:yellow)
+    puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    puts "WELCOME TO THE RUBY RED CASINO!"
+    puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     @new_player.get_name
     puts "Hello #{@new_player.name}, enter how much money you're ready to lose."
     @new_player.get_cash
