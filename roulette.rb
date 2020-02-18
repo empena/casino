@@ -17,7 +17,7 @@ class Roulette
     if menu_choice == "Q" || menu_choice == "q"
       winnings = sum_winnings()
       puts "Thank you for playing Ruby Roulette. Your winnings are: $#{winnings}"
-      return
+      return winnings
     else
     place_bet()
     end
@@ -268,9 +268,5 @@ class Roulette
       loser()
     end
   end
-
-
+  
 end
-
-x = Roulette.new(450)
-x.menu
