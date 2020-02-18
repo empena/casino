@@ -33,7 +33,7 @@ class Casino
     puts "~~~~~ CASINO  ~~~~~".colorize(:red)
     puts "1) Play Slots"
     puts "2) Play High / Low"
-    puts "3) Roulette"
+    puts "3) Play Roulette"
     puts "4) View Account"
     puts "5) Exit"
     user_selection = gets.to_i
